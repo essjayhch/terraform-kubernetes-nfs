@@ -1,6 +1,6 @@
 resource kubernetes_storage_class nfs {
   metadata {
-    name = local.name
+    name      = local.name
     namespace = local.namespace
   }
 

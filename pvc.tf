@@ -1,6 +1,6 @@
 resource kubernetes_persistent_volume_claim nfs {
   metadata {
-    name = local.name
+    name      = local.name
     namespace = local.namespace
   }
   spec {

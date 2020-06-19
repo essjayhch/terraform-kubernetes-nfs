@@ -1,6 +1,6 @@
 resource kubernetes_deployment nfs {
   metadata {
-    name = local.name
+    name      = local.name
     namespace = local.namespace
   }
 
@@ -9,34 +9,34 @@ resource kubernetes_deployment nfs {
 
     selector {
       match_labels = {
-        "app.kubernetes.io/role" = "nfs-server"
+        "app.kubernetes.io/role"     = "nfs-server"
         "app.kubernetes.io/instance" = var.instance
       }
     }
     template {
       metadata {
         labels = {
-          "app.kubernetes.io/role" = "nfs-server"
+          "app.kubernetes.io/role"     = "nfs-server"
           "app.kubernetes.io/instance" = var.instance
         }
       }
       spec {
         container {
-          name = "nfs-server"
+          name  = "nfs-server"
           image = "gcr.io/google_containers/volume-nfs:0.8"
 
           port {
-            name = "nfs"
+            name           = "nfs"
             container_port = 2049
           }
 
           port {
-           name = "mountd"
-           container_port = 20048
+            name           = "mountd"
+            container_port = 20048
           }
 
           port {
-            name = "rpcbind"
+            name           = "rpcbind"
             container_port = 111
           }
 
@@ -46,7 +46,7 @@ resource kubernetes_deployment nfs {
 
           volume_mount {
             mount_path = "/exports"
-            name = "nfs-pvc"
+            name       = "nfs-pvc"
           }
         }
 

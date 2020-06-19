@@ -1,7 +1,7 @@
 resource kubernetes_service nfs {
   metadata {
     namespace = local.namespace
-    name = local.name
+    name      = local.name
   }
 
   spec {
@@ -20,8 +20,8 @@ resource kubernetes_service nfs {
       port = 111
     }
 
-    selector {
-      "app.kubernetes.io/role" = "nfs-server"
+    selector = {
+      "app.kubernetes.io/role"     = "nfs-server"
       "app.kubernetes.io/instance" = var.instance
     }
 
