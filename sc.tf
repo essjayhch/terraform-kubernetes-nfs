@@ -9,5 +9,6 @@ resource kubernetes_storage_class nfs {
 
   parameters = {
     type = "pd-standard"
+    replication_type = "regional-pd"
   }
 }
