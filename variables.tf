@@ -1,6 +1,6 @@
 variable "server_storage_size" {
   description = "Size of GCE PD to back this service"
-  default     = "10Gi"
+  default     = "200Gi"
 }
 
 
