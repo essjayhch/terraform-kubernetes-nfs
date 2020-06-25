@@ -21,3 +21,7 @@ variable "instance" {
 variable "replication_type" {
   default = "none"
 }
+
+variable "pd-type" {
+  default = "pd-standard"
+}
