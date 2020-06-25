@@ -5,7 +5,6 @@ resource kubernetes_deployment nfs {
   }
 
   spec {
-    replicas = var.server_replicas
 
     selector {
       match_labels = {

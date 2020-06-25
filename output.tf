@@ -1,7 +1,7 @@
 output ip {
   description = "IP of service"
 
-  value = kubernetes_service.nfs.cluster_ip
+  value = kubernetes_service.nfs.spec.0.cluster_ip
 }
 
 output service_name {
