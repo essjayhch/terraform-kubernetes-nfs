@@ -17,3 +17,7 @@ variable "instance" {
   default     = "default"
   description = "Instance name"
 }
+
+variable "replication_type" {
+  default = "none"
+}
