@@ -47,6 +47,20 @@ resource kubernetes_deployment nfs {
             mount_path = "/exports"
             name       = "nfs-pvc"
           }
+
+          volume_mount {
+            mount_path = "/etc/exports"
+            name = "exports"
+            sub_path = "exports"
+          }
+        }
+
+        volume {
+          name = "exports"
+
+          config_map {
+            name = kubernetes_config_map.exports.metadata.0.name
+          }
         }
 
         volume {
