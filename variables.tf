@@ -25,3 +25,7 @@ variable "replication_type" {
 variable "pd-type" {
   default = "pd-standard"
 }
+
+variable "manage_sc" {
+  default = false
+}

@@ -4,7 +4,7 @@ resource kubernetes_persistent_volume_claim nfs {
     namespace = local.namespace
   }
   spec {
-    storage_class_name = kubernetes_storage_class.nfs.metadata.0.name
+    storage_class_name = local.storage_class
     access_modes       = ["ReadWriteOnce"]
     resources {
       requests = {
