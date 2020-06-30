@@ -11,7 +11,7 @@ resource kubernetes_config_map exports {
     name      = "nfs-exports-${random_id.suffix.hex}"
   }
 
-  data {
+  data = {
     exports = <<EOT
 /exports ${var.export_options}
 EOT
