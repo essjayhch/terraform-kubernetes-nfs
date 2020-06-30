@@ -1,5 +1,9 @@
 resource random_id suffix {
-  length = 4
+  byte_length = 4
+
+  keepers = {
+    var.export_options
+  }
 }
 resource kubernetes_config_map exports {
   metadata {
