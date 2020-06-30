@@ -2,7 +2,7 @@ resource random_id suffix {
   byte_length = 4
 
   keepers = {
-    var.export_options
+    exports = var.export_options
   }
 }
 resource kubernetes_config_map exports {
