@@ -22,7 +22,7 @@ variable replication_type {
   default = "none"
 }
 
-variable pd-type {
+variable pd_type {
   default = "pd-standard"
 }
 
