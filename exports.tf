@@ -4,12 +4,12 @@ resource random_id suffix {
 resource kubernetes_config_map exports {
   metadata {
     namespace = local.namespace
-    name = "nfs-exports-${random_id.suffix.hex}"
+    name      = "nfs-exports-${random_id.suffix.hex}"
   }
 
   data {
     exports = <<EOT
-/exports *(rw,fsid=0,insecure,async,no_root_squash)
+/exports ${var.export_options}
 EOT
   }
 }

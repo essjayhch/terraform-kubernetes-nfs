@@ -1,31 +1,35 @@
-variable "server_storage_size" {
+variable server_storage_size {
   description = "Size of GCE PD to back this service"
   default     = "200Gi"
 }
 
 
-variable "namespace" {
+variable namespace {
   default = "default"
 }
 
-variable "manage_namespace" {
+variable manage_namespace {
   description = "Whether this module needs to create or maintain the namespace"
   default     = false
 }
 
-variable "instance" {
+variable instance {
   default     = "default"
   description = "Instance name"
 }
 
-variable "replication_type" {
+variable replication_type {
   default = "none"
 }
 
-variable "pd-type" {
+variable pd-type {
   default = "pd-standard"
 }
 
-variable "manage_sc" {
-  default = false
+variable export_options {
+  default = "*(rw,fsid=0,insecure,async,no_root_squash)"
+}
+
+variable export_path {
+  default = "/exports"
 }

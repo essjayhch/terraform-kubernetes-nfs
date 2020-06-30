@@ -9,3 +9,12 @@ output service_name {
 
   value = kubernetes_service.nfs.metadata.0.name
 }
+
+output namespace {
+  value = local.namespace
+}
+
+
+output export_path {
+  value = var.export_path
+}

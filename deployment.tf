@@ -44,14 +44,14 @@ resource kubernetes_deployment nfs {
           }
 
           volume_mount {
-            mount_path = "/exports"
+            mount_path = var.export_path
             name       = "nfs-pvc"
           }
 
           volume_mount {
             mount_path = "/etc/exports"
-            name = "exports"
-            sub_path = "exports"
+            name       = "exports"
+            sub_path   = "exports"
           }
         }
 

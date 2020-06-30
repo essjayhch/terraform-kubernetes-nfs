@@ -1,7 +1,6 @@
 resource kubernetes_storage_class nfs {
-  count = var.manage_sc ? 1 : 0
   metadata {
-    name = "sc-nfs"
+    name = "sc-nfs-${local.namespace}-${var.instance}"
   }
 
   storage_provisioner = "kubernetes.io/gce-pd"
